@@ -1,0 +1,50 @@
+/* CSS vars for code block customization (used by Wrapper components) */
+.markdown {
+  line-height: 28px;
+  --path: none;
+  --radius-top: 12px;
+  --radius-bottom: 12px;
+  --padding-top: 1rem;
+  --padding-bottom: 1rem;
+}
+
+.markdown iframe {
+  width: calc(100% + 2rem) !important;
+  margin-left: -1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .markdown iframe {
+    border-color: #444 !important;
+  }
+}
+
+@media (max-width: 672px) {
+  .markdown pre,
+  .markdown iframe {
+    width: calc(100% + 2.5rem) !important;
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .markdown pre {
+    border-radius: 0 !important;
+  }
+  .markdown iframe {
+    border-left: none !important;
+    border-right: none !important;
+  }
+}
+
+/* Code line highlighting - data-attribute from rehype-pretty-code */
+.markdown pre [data-highlighted-line] {
+  margin-left: -16px;
+  margin-right: -16px;
+  padding-left: 12px;
+  border-left: 4px solid oklch(0.6271 0.1914 41.1333);
+  background-color: #1a0f00;
+  display: block;
+  padding-right: 1em;
+}

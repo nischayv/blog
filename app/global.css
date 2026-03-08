@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --text: #222;
+    --title: #222;
+    --bg: white;
+    --code-bg: #232936;
+    --link: oklch(0.52 0.20 41.1333);
+    --inlineCode-bg: rgba(255, 229, 100, 0.2);
+    --inlineCode-text: #1a1a1a;
+    --orange: oklch(0.6271 0.1914 41.1333);
+    --purple: lab(33 42.09 -43.19);
+    --svg-filter: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: rgba(255, 255, 255, 0.88);
+        --title: white;
+        --bg: rgb(40, 44, 53);
+        --code-bg: #191d27;
+        --link: oklch(0.80 0.13 41.1333);
+        --inlineCode-bg: rgba(115, 124, 153, 0.2);
+        --inlineCode-text: #e6e6e6;
+        --orange: oklch(0.80 0.13 41.1333);
+        --purple: lab(78 19.97 -36.75);
+        --svg-filter: invert(93%) hue-rotate(180deg);
+    }
+}
+
+@property --myColor1 {
+    syntax: "<color>";
+    initial-value: #222;
+    inherits: false;
+}
+
+@property --myColor2 {
+    syntax: "<color>";
+    initial-value: #222;
+    inherits: false;
+}
+
+@media (prefers-color-scheme: dark) {
+    @property --myColor1 {
+        syntax: "<color>";
+        initial-value: rgba(255, 255, 255, 0.88);
+        inherits: false;
+    }
+    @property --myColor2 {
+        syntax: "<color>";
+        initial-value: rgba(255, 255, 255, 0.88);
+        inherits: false;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+@media (prefers-reduced-motion) {
+    * {
+        transition: none !important;
+    }
+}
+
+:root { --bg-rotated: white; }
+@media (prefers-color-scheme: dark) {
+    :root { --bg-rotated: rgb(221, 225, 236); }
+}
