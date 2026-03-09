@@ -189,7 +189,7 @@ export async function generateMetadata({
   const file = await readFile("./public/" + slug + "/index.md", "utf8");
   let { data } = matter(file);
   return {
-    title: data.title + " — nischayv",
+    title: data.title + " — Off by One",
     description: data.spoiler,
   };
 }

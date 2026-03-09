@@ -11,10 +11,10 @@ export interface Post {
 }
 
 export const metadata = {
-  title: "nischayv — A blog by Nischay Venkatram",
+  title: "Off by One — A blog by Nischay Venkatram",
   description: "A blog by Nischay Venkatram",
   openGraph: {
-    title: "nischayv",
+    title: "Off by One",
   },
   alternates: {
     types: {

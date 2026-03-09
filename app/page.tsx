@@ -36,9 +36,10 @@ function PostTitle({ post }: { post: Post }) {
   let lightRange = lightStart.range(lightEnd);
   let darkRange = darkStart.range(darkEnd);
   let today = new Date();
-  let timeSinceFirstPost = today.getTime() - new Date(2026, 2, 8).getTime();
+  // Reference: 5 years before blog start, so new posts stay near 0 (orange) for years
+  let blogEra = today.getTime() - new Date(2021, 2, 8).getTime();
   let timeSinceThisPost = today.getTime() - new Date(post.date).getTime();
-  let staleness = timeSinceFirstPost > 0 ? timeSinceThisPost / timeSinceFirstPost : 0;
+  let staleness = Math.max(0, Math.min(1, timeSinceThisPost / blogEra));
 
   return (
     <h2
